@@ -96,3 +96,68 @@ function UserData() {
 
 export default UserData
 --------------------------------------------------------------------------
+**Mapping Components** 
+UserData.js
+import React from 'react'
+import UserCard from "../components/UserCard";
+
+function UserData() {
+    let data= [
+      
+      
+        {
+          name:"Aarna",
+          age:20,
+          field:"frontend"
+        },
+        
+        {
+          name:"Rohan",
+          age:21,
+          field:"frontend"
+        },
+        
+        {
+          name:"Mitali",
+          age:24,
+          field:"backend"
+        },
+        
+        {
+          name:"mehtab",
+          age:24,
+          field:"backend"
+        },
+
+       ];
+  
+  return (
+    <div>
+        {data.map(({name,age,field},index)=>(
+          <UserCard name={name} age={age} field={field}
+          />
+                ))}
+    </div>
+  )
+}
+
+export default UserData
+
+----------------------------------------------
+UserCard.js
+import React from 'react-dom/client'
+
+
+function UserCard({name,age,field},index) {
+  return (
+    <div key={index}>
+                    <h1>{name}</h1>
+                    <p>{age}</p>
+                    <p>{field}</p>
+                    </div>
+  )
+}
+
+export default UserCard
+----------------------------------------------------------------------------
+
