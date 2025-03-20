@@ -1,0 +1,40 @@
+Cart.js 
+import React from "react-dom/client";
+import Title from "../components/Title";
+
+function Cart() {
+    return (
+        <div>
+            <Title 
+                name="Aarna"  
+                contactno="8826004270"
+                collegename="NITP" 
+                branch="CSE" 
+                year="2nd"
+                rollno="2306199"
+                fees="1"
+            />
+        </div>
+    );
+}
+
+export default Cart;
+
+Title.js
+import React from 'react';
+
+function Title({ name, contactno, collegename, branch, year, rollno, fees }) {
+    return (
+        <div>
+            <h1 style={{ fontSize: 50, color: "green" }}>{name}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{contactno}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{collegename}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{branch}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{year}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{rollno}</h1>
+            <h1 style={{ fontSize: 30, color: "green" }}>{fees}</h1>
+        </div>
+    );   
+}
+
+export default Title;
