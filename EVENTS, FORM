@@ -1,0 +1,98 @@
+import React from 'react'
+
+function Register() {
+
+
+     function handleRegister(event){
+      event.preventDefault(); //prevents the page from reloading and registered will be shown in console.
+      console.log("registered !")
+     }
+  return (
+    <form>
+        <input type="email" placeholder='Type here '></input>
+        <button onClick={handleRegister} >Submit</button>
+    </form>
+  )
+}
+
+export default Register
+------------------------------------------------------------------------------------
+conditional rendering 
+import React from 'react'
+
+function Register() {
+
+
+     function handleRegister(event){
+      event.preventDefault(); //prevents the page from reloading and registered will be shown in console.
+      console.log("registered !")
+     }
+
+     let age=12;
+  return (
+    <form>
+      {age>18? ( //ternary operator
+            <div>
+            <input type="email" placeholder='Type here '></input>
+            <button onClick={handleRegister} >Submit</button>
+            </div>
+      ): (
+        <h1>You are a small kid ! come back when u are 18</h1>
+      )
+      }
+     
+    </form>
+  )
+}
+
+export default Register
+--------------------------------------------------------------------------------------
+import React from 'react'
+
+function UserData() {
+    let data= [
+      
+      
+        {
+          name:"Aarna",
+          age:20,
+          field:"frontend"
+        },
+        
+        {
+          name:"Rohan",
+          age:21,
+          field:"frontend"
+        },
+        
+        {
+          name:"Mitali",
+          age:24,
+          field:"backend"
+        },
+        
+        {
+          name:"mehtab",
+          age:24,
+          field:"backend"
+        },
+
+       ];
+  
+  return (
+    <div>
+        {data.map(({name,age,field},index)=>
+           (
+                <div key={index}>
+                    <h1>{name}</h1>
+                    <p>{age}</p>
+                    <p>{field}</p>
+                    </div>
+            )
+        )}
+    </div>
+  )
+}
+
+export default UserData
+--------------------------------------------------------------------------
