@@ -1,0 +1,85 @@
+CSS IN REACT 
+Register.js file
+import React from 'react'
+import './Register.css';
+
+function Register() {
+
+
+     function handleRegister(event){
+      event.preventDefault(); //prevents the page from reloading and registered will be shown in console.
+      console.log("registered !")
+     }
+
+  return (
+    <form>
+      <div>
+        <input  className="form-input"
+        type="email" placeholder="enter email"></input>
+        <input className="form-input"
+        type="email" placeholder="enter password "></input>
+        <button onClick={handleRegister}>Submit</button>
+      </div>
+    </form>
+  )
+}
+
+export default Register
+
+Register.css file
+.form-input{
+    background-color: aqua;
+    border:1px solid blue;
+}
+------------------------------------------------------------------------------------------------
+  Hooks: there are 3 types of hooks - useState , useMemo()
+
+  useState - this stores the value of each state 
+
+import React,{useState} from 'react'
+import './Register.css';
+
+
+
+function Register() {
+
+  const [email,setEmail]=useState();
+
+     function handleRegister(event){
+      event.preventDefault(); //prevents the page from reloading and registered will be shown in console.
+      console.log("registered !")
+     }
+    
+
+  return (
+    <form>
+      <div>
+        <input  className="form-input"
+        type="email" placeholder="enter email"
+        value={email}
+        onChange={(e) => setEmail(e.target.Value)}
+        ></input>
+        <input className="form-input"
+        type="email" placeholder="enter password "></input>
+        <button onClick={handleRegister}>Submit</button>
+      </div>
+    </form>
+  )
+}
+
+export default Register
+
+here email is storing every single state of email 
+ex: chauhanaarna6@gmail.com
+  o/p:
+c
+ch
+cha
+chau
+chauh
+chauha
+chauhan
+etcccccccc
+
+  
+  
